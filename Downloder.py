@@ -9,13 +9,15 @@ def download():
             res = input('Choose the quality (720  -  480  -  360):')
             res2 = f'{res}p'
             yt = video.streams.filter(res=res2).all()
-            yt[0].download('/home/mo/Videos')
+            path = input('Enter path to download : ')
+            yt[0].download(path)
         video()
     elif ask == 'A':
         def audio():
             audio = YouTube(url)
             mp3 = audio.streams.filter(only_audio=True).all()
-            mp3[0].download('home/mo/Music')
+            path = input('Enter path to download : ')
+            mp3[0].download(path)
         audio()
     def again():
         again = input('Do you want to return (yes/no)')
